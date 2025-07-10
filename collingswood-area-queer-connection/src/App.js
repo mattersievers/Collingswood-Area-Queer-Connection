@@ -1,18 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import ArtistList from './components/ArtistList';
+import Contact from './components/Contact';
+import ArtistProfile from './components/ArtistProfile';
 
 function App() {
+  const [pages] = useState(['Artist Of The Month','Artist','Artist List','Contact']);
+  const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
+  const [artists] = useState(["Bernie Sanders","Alfred O'neil Hitchcock III","Tryn","James Beakman Nargly"]);
+  const [currentArtist, setCurrentArtist] = useState(artists[0]);
   return (
-    <div className="App">
-      <Navbar />
-      <header className="App-header">
-       <h1>Collingswood Area Queer Connection</h1>
-       <div>
-        <p>Promoting South Jersey LGBTQIA+ artists.</p>
-       </div>
-      </header>
-    </div>
+    
+    <>
+      <Navbar
+      pages = {pages} 
+      currentPageSelection = {currentPageSelection} 
+      setCurrentPageSelection = {setCurrentPageSelection}/>      
+      
+      {currentPageSelection === 'Artist Of The Month' && 
+      <>
+      <h1>Artist of the Month</h1>
+      <ArtistProfile 
+      currentArtist = {currentArtist}/>
+      </>}
+
+      {currentPageSelection === 'Artist' && 
+      <ArtistProfile 
+      currentArtist = {currentArtist}/>}
+
+      {currentPageSelection === 'Artist List' && 
+      
+      <ArtistList
+      artists = {artists} 
+      currentArtist = {currentArtist}
+      setCurrentArtist = {setCurrentArtist}/>}
+
+      {currentPageSelection === 'Contact' &&
+      <Contact/>}
+
+      <Footer/>
+    </>
+    
   );
 }
 

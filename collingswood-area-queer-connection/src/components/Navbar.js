@@ -1,27 +1,17 @@
-import {NavBar, Nav, Container, Modal, Tab} from react-bootstrap;
+import React ,{useEffect} from "react";
 
-const AppNavBar = () =>{
+const AppNavBar = (props) =>{
+    useEffect(() => {
+        document.title = 'CAQC ' + props.currentPageSelection;
+    })
     return(
         <>
-        <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container fluid>
-          <Navbar.Brand as={Link} to='/' className='websiteTitle'>
-            Collingswood Area Queer Connection
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
-            <Nav className='ms-auto'>
-                  <Nav.Link as={Link} to='/artists'>
-                    Artists
-                  </Nav.Link>
-                  <Nav.Link as={Link} to='/contact'>
-                    Contact
-                  </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
+        <div className="navigationBar">
+            <h1 onClick={ () => props.setCurrentPageSelection('Artist Of The Month')}>Collingswood Area Queer Connection</h1>
+            <div onClick={ () => props.setCurrentPageSelection('Artist List')}>Artist List</div>
+            <div onClick={ () => props.setCurrentPageSelection('Contact')}>Contact</div>
+        </div>    
+        </>
   );
 }
 
