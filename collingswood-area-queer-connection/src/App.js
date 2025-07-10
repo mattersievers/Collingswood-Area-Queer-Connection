@@ -9,7 +9,7 @@ import ArtistProfile from './components/ArtistProfile';
 function App() {
   const [pages] = useState(['Artist Of The Month','Artist','Artist List','Contact']);
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
-  const [artists] = useState(["Bernie Sanders","Alfred O'neil Hitchcock III","Tryn","James Beakman Nargly"]);
+  const [artists] = useState(["Blernie Standers","Alfred O'neil Hitchcock III","Tryn","James Beakman Nargly", "Reginald Woolsworth"]);
   const artistOfTheMonth = artists[0]
   const [currentArtist, setCurrentArtist] = useState(artistOfTheMonth);
 
