@@ -39,7 +39,9 @@ function App() {
       <ArtistList
       artists = {artists} 
       currentArtist = {currentArtist}
-      setCurrentArtist = {setCurrentArtist}/>}
+      setCurrentArtist = {setCurrentArtist}
+      setCurrentPageSelection = {setCurrentPageSelection}
+      />}
 
       {currentPageSelection === 'Contact' &&
       <Contact/>}
