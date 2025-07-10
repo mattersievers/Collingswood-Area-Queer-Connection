@@ -1,8 +1,14 @@
 import React ,{useEffect} from "react";
 
 const AppNavBar = (props) =>{
+    
     useEffect(() => {
-        document.title = 'CAQC ' + props.currentPageSelection;
+        props.currentPageSelection === 'Artist Of The Month' || props.currentPageSelection === 'Artist'?(
+            document.title = "CAQC AotM " + props.currentArtist):(
+            props.currentPageSelection === 'Artist'?(
+                document.title = "CAQC AotM " + props.currentArtist
+                ):(    
+                document.title = 'CAQC ' + props.currentPageSelection));
     })
     return(
         <>

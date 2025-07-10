@@ -3,7 +3,14 @@ const ArtistList = (props) => {
         <>
             <ul>   
             {props.artists.map((artist,i) => (
-                <li key={i}>{artist}</li>
+                <li key={i}>
+                    <span
+                        onClick={ () => {
+                            props.setCurrentPageSelection('Artist')
+                        }}>
+                    {artist}
+                    </span>
+                </li>
             ))}  
             </ul>
         </>

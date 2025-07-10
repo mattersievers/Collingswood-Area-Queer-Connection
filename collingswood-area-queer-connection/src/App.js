@@ -10,14 +10,18 @@ function App() {
   const [pages] = useState(['Artist Of The Month','Artist','Artist List','Contact']);
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
   const [artists] = useState(["Bernie Sanders","Alfred O'neil Hitchcock III","Tryn","James Beakman Nargly"]);
-  const [currentArtist, setCurrentArtist] = useState(artists[0]);
+  const artistOfTheMonth = artists[0]
+  const [currentArtist, setCurrentArtist] = useState(artistOfTheMonth);
+
+  
   return (
     
     <>
       <Navbar
       pages = {pages} 
       currentPageSelection = {currentPageSelection} 
-      setCurrentPageSelection = {setCurrentPageSelection}/>      
+      setCurrentPageSelection = {setCurrentPageSelection}
+      currentArtist = {currentArtist}/>      
       
       {currentPageSelection === 'Artist Of The Month' && 
       <>
