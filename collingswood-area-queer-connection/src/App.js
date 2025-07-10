@@ -9,7 +9,7 @@ function App() {
       <header className="App-header">
        <h1>Collingswood Area Queer Connection</h1>
        <div>
-        <p>Here is our brief story.</p>
+        <p>Promoting South Jersey LGBTQIA+ artists.</p>
        </div>
       </header>
     </div>
