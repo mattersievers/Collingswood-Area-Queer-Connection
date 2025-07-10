@@ -5,12 +5,12 @@ import Footer from './components/Footer';
 import ArtistList from './components/ArtistList';
 import Contact from './components/Contact';
 import ArtistProfile from './components/ArtistProfile';
+import artists from './utils/artistListDetails.js';
 
 function App() {
   const [pages] = useState(['Artist Of The Month','Artist','Artist List','Contact']);
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
-  const [artists] = useState(["Blernie Standers","Alfred O'neil Hitchcock III","Tryn","James Beakman Nargly", "Reginald Woolsworth"]);
-  const artistOfTheMonth = artists[0]
+  const artistOfTheMonth = artists[1].name
   const [currentArtist, setCurrentArtist] = useState(artistOfTheMonth);
 
   

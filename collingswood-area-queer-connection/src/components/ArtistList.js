@@ -7,9 +7,9 @@ const ArtistList = (props) => {
                     <span
                         onClick={ () => {
                             props.setCurrentPageSelection('Artist')
-                            props.setCurrentArtist(artist)
+                            props.setCurrentArtist(artist.name)
                         }}>
-                    {artist}
+                    {artist.name}
                     </span>
                 </li>
             ))}  

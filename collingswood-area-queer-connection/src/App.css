@@ -40,3 +40,8 @@
 .navigationBar {
   display: flex;
 }
+
+.profilePhoto{
+  width: 300px;
+  height: 200px;
+}
