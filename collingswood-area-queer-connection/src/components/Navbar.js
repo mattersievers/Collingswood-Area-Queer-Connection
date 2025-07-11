@@ -1,20 +1,21 @@
 import React ,{useEffect} from "react";
+import artists from "../utils/artistListDetails";
 
 const AppNavBar = (props) =>{
     
     useEffect(() => {
         props.currentPageSelection === 'Artist Of The Month'?(
-            document.title = "CAQC AotM " + props.currentArtist + "'s Profile"):(
+            document.title = "Monthly Artist " + props.currentArtist.name + "'s Profile"):(
             props.currentPageSelection === 'Artist'?(
-                document.title = "CAQC " + props.currentArtist +"'s Profile"  ):(    
-                document.title = 'CAQC ' + props.currentPageSelection));
+                document.title = props.currentArtist.name +"'s Profile"  ):(    
+                document.title = props.currentPageSelection));
     })
     return(
         <>
         <div className="navigationBar">
-            <h1 onClick={ () => props.setCurrentPageSelection('Artist Of The Month')}>Collingswood Area Queer Connection</h1>
-            <div onClick={ () => props.setCurrentPageSelection('Artist List')}>Artists</div>
-            <div onClick={ () => props.setCurrentPageSelection('Contact')}>Contact</div>
+            <img className="logoImg" onClick={ () => {props.setCurrentPageSelection('Artist Of The Month'); props.setCurrentArtist(artists[props.artistOfTheMonthNumber]);}} src={require(`../assets/CAQC Logo 1.png`)} alt="CAQC Logo"/>
+            <div className ="pageSelect" onClick={ () => props.setCurrentPageSelection('Artist List')}>Artists</div>
+            <div className ="pageSelect lastOption" onClick={ () => props.setCurrentPageSelection('Contact Us')}>Contact</div>
         </div>    
         </>
   );

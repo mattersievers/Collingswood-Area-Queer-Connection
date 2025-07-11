@@ -39,9 +39,25 @@
 
 .navigationBar {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.pageSelect{
+  font-size: 3.5vw;
+}
+
+.lastOption{
+  padding-right: 10vw;
+}
 .profilePhoto{
-  width: 300px;
-  height: 200px;
+  width: 20vw;
+  height: 15vw;
+}
+
+.logoImg{
+  width: 15vw;
+  height: 10vw;
+  border-radius: 50%;
 }

@@ -8,10 +8,10 @@ import ArtistProfile from './components/ArtistProfile';
 import artists from './utils/artistListDetails.js';
 
 function App() {
-  const [pages] = useState(['Artist Of The Month','Artist','Artist List','Contact']);
+  const [pages] = useState(['Artist Of The Month','Artist','Artist List','Contact Us']);
   const [currentPageSelection, setCurrentPageSelection] = useState(pages[0]);
-  const artistOfTheMonth = artists[1].name
-  const [currentArtist, setCurrentArtist] = useState(artistOfTheMonth);
+  const artistOfTheMonthNumber = 1;
+  const [currentArtist, setCurrentArtist] = useState(artists[artistOfTheMonthNumber]);
 
   
   return (
@@ -21,7 +21,9 @@ function App() {
       pages = {pages} 
       currentPageSelection = {currentPageSelection} 
       setCurrentPageSelection = {setCurrentPageSelection}
-      currentArtist = {currentArtist}/>      
+      currentArtist = {currentArtist}
+      setCurrentArtist = {setCurrentArtist}
+      artistOfTheMonthNumber = {artistOfTheMonthNumber}/>      
       
       {currentPageSelection === 'Artist Of The Month' && 
       <>
@@ -43,7 +45,7 @@ function App() {
       setCurrentPageSelection = {setCurrentPageSelection}
       />}
 
-      {currentPageSelection === 'Contact' &&
+      {currentPageSelection === 'Contact Us' &&
       <Contact/>}
 
       <Footer/>
