@@ -37,11 +37,18 @@
   }
 }
 
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .navigationBar {
+  width: 100vw;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
 }
 
 .pageSelect{
@@ -60,4 +67,25 @@
   width: 15vw;
   height: 10vw;
   border-radius: 50%;
+}
+
+.artPhotosContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.artistDescription{
+  width: 65vw;
+}
+
+.artPhoto{
+  width: 20vw;
+  height: 15vw;
+  padding: 5vw 5vw 0 5vw;
+}
+
+.artPhotoDescription{
+  text-align: center;
 }

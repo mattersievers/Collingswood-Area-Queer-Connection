@@ -10,6 +10,7 @@ const ArtistList = (props) => {
                             props.setCurrentArtist(artist)
                         }}>
                     {artist.name}
+                    <img className="profilePhoto" src={require(`../assets/artists/${artist.name}/${artist.profilePhoto}`)} alt={artist.name} />
                     </span>
                 </li>
             ))}  

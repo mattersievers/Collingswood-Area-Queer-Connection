@@ -17,6 +17,7 @@ function App() {
   return (
     
     <>
+    <main>
       <Navbar
       pages = {pages} 
       currentPageSelection = {currentPageSelection} 
@@ -27,7 +28,7 @@ function App() {
       
       {currentPageSelection === 'Artist Of The Month' && 
       <>
-      <h1>Artist of the Month</h1>
+      <h1 className='AOTMTitle'>Artist of the Month</h1>
       <ArtistProfile 
       currentArtist = {currentArtist}/>
       </>}
@@ -49,6 +50,7 @@ function App() {
       <Contact/>}
 
       <Footer/>
+    </main>  
     </>
     
   );

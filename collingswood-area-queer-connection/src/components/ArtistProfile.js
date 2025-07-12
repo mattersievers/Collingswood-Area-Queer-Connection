@@ -3,14 +3,21 @@
 const ArtistProfile = (props) =>{
     return(
         <>
-            <h1>{props.currentArtist.name}</h1>
+            <h1 className="artistName">{props.currentArtist.name} <span className="artistsPronouns">({props.currentArtist.pronouns})</span></h1>
             <img className="profilePhoto" src={require(`../assets/artists/${props.currentArtist.name}/${props.currentArtist.profilePhoto}`)} alt={props.currentArtist.name} />
             <h2>{props.currentArtist.specialty}</h2>
-            <div>Maybe we'll put some work in here</div>
-            <div>And A brief synopsis about what they do</div>
-            {props.currentArtist.artPhotoList.map((artPhotoFile,i) => {
-                return(<img className="profilePhoto" src={require(`../assets/artists/${props.currentArtist.name}/${artPhotoFile}`)} alt={artPhotoFile} />
+            <div className="artistDescription">{props.currentArtist.description}</div>
+            <a href={`${props.currentArtist.url}`}>{props.currentArtist.businessName}</a>
+
+            <div className="artPhotosContainer">
+            {props.currentArtist.artPhotoList.map((artPhoto,i) => {
+                return(
+                <div className="artPhotoDiv">
+                    <img className="artPhoto" src={require(`../assets/artists/${props.currentArtist.name}/${artPhoto.fileName}`)} alt={artPhoto.description} />
+                    <p className="artPhotoDescription">{artPhoto.description}</p>
+                </div>
             )})}
+            </div>
             
         </>
     )
