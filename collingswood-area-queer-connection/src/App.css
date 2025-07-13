@@ -1,3 +1,9 @@
+:root{
+  --main-color: moccasin;
+  --navbar-color: burlywood;
+  --navbar-shadow-color: rgb(165, 84, 84);
+}
+
 .App {
   text-align: center;
 }
@@ -37,18 +43,31 @@
   }
 }
 
+/* main */
+
+html{
+  max-width: 100vw;
+  background-color: var(--main-color);
+}
+
 main{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  max-width: 100vw;
 }
 
+/* navigation */
 .navigationBar {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbar-color);
+  box-shadow: 0 1vw 1.5vw 0 var(--navbar-shadow-color);
+
 }
 
 .pageSelect{
@@ -58,15 +77,30 @@ main{
 .lastOption{
   padding-right: 10vw;
 }
-.profilePhoto{
-  width: 20vw;
-  height: 15vw;
-}
 
 .logoImg{
   width: 15vw;
   height: 10vw;
   border-radius: 50%;
+  margin: 1vw;
+}
+
+/* Artist Profile */
+
+.rainbowBorder{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2vw 1vw 0;
+  box-shadow: inset 0px 0px 12px 12px moccasin, inset 0px 0px 3px 2px moccasin;
+  background: radial-gradient(ellipse at bottom left, red, rgb(255,82,0), orange , yellow, green, rgb(0,255,0), cyan, blue, violet, purple, rgb(128,0,64));
+  border-radius: 25%;
+}
+
+.profilePhoto{
+  width: 20vw;
+  height: 15vw;
+  border-radius: 25%;
 }
 
 .artPhotosContainer{
@@ -88,4 +122,30 @@ main{
 
 .artPhotoDescription{
   text-align: center;
+}
+
+/* Artist List */
+ul{
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: center;
+ padding: 0;
+ max-width: 80%;
+ margin: 5vw;
+ background-color: moccasin;
+}
+
+li{
+ list-style-type: none;
+ flex-wrap: wrap;
+ max-width: 75%;
+}
+
+.artistCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw;
+  width: 100%;
 }
